@@ -1,10 +1,18 @@
-import { View, Text, StyleSheet } from 'react-native';
+import React from 'react';
+// ...existing code...
+import { View, Text, StyleSheet, Button } from 'react-native';
 
 export default function HomeScreen() {
+  const [count, setCount] = React.useState<number>(0);
+  //jsx code
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Hello React Native!</Text>
-    </View>
+    <View style={styles.container}> // View is like a div
+      <Text style={styles.title}>
+        count = {count}
+        </Text> 
+      <Button title="Count" onPress={() => setCount(count + 1)} />
+      
+    </View> 
   );
 }
 
@@ -18,4 +26,9 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
   },
+  hello1:{
+    color: "pink",
+    borderColor: "blue",  
+    borderWidth: 2,
+  }
 });
